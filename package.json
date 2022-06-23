@@ -1,0 +1,22 @@
+{
+  "name": "drop-zone-file-uploader",
+  "version": "1.0.0",
+  "description": "A simple Vue drop uploader plugin",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glowfisch8lan/drop-zone-file-uploader.git"
+  },
+  "homepage": "https://github.com/glowfisch8lan/drop-zone-file-uploader",
+  "bugs": {
+    "url": "https://github.com/glowfisch8lan/drop-zone-file-uploader/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "D. Grigorov",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
