@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/glowfisch8lan/drop-zone-file-uploader.git"
   },
+  "files": [
+    "src/",
+    "dist/"
+  ],
   "homepage": "https://github.com/glowfisch8lan/drop-zone-file-uploader",
   "bugs": {
     "url": "https://github.com/glowfisch8lan/drop-zone-file-uploader/issues"
