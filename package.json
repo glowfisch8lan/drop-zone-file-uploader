@@ -2,25 +2,50 @@
   "name": "drop-zone-file-uploader",
   "version": "1.0.1",
   "description": "A simple Vue drop uploader plugin",
-  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/glowfisch8lan/drop-zone-file-uploader.git"
   },
+  "main": "dist/drop-zone-file-uploader.umd.js",
+  "module": "dist/drop-zone-file-uploader.esm.js",
+  "unpkg": "dist/drop-zone-file-uploader.min.js",
+  "browser": {
+    "./sfc": "src/DropZone.vue"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/drop-zone-file-uploader.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/drop-zone-file-uploader.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/drop-zone-file-uploader.min.js"
+  },
   "files": [
-    "src/",
-    "dist/"
+    "dist/*",
+    "src/components/*",
+    "src/build-entry.js"
   ],
   "homepage": "https://github.com/glowfisch8lan/drop-zone-file-uploader",
   "bugs": {
     "url": "https://github.com/glowfisch8lan/drop-zone-file-uploader/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "D. Grigorov",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
-  }
+    "lodash": "^4.17.21",
+    "sass-loader": "^13.0.2",
+    "vue": "^2.6.14",
+    "vue-cli": "^2.9.6",
+    "vuetify": "^2.6.1"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "node-sass": "^7.0.1",
+    "@vue/cli-service": "^5.0.6",
+    "@vue/cli": "^5.0.6",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "types": "./types/index.d.ts"
 }
