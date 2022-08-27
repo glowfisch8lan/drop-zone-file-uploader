@@ -1,9 +1,9 @@
 <template>
   <v-card elevation="0" class="my-2">
     <v-card-text
-      :class="['dropZone', 'py-3', dragging ? 'overlay' : '']"
-      @dragenter="dragging = true"
-      @dragleave="dragging = false"
+        :class="['dropZone', 'py-3', dragging ? 'overlay' : '']"
+        @dragenter="dragging = true"
+        @dragleave="dragging = false"
     >
       <div class="d-flex justify-center" @drag="onChange">
         <v-icon large left>mdi-cloud-upload-outline</v-icon>
@@ -19,8 +19,8 @@
 
     <v-card-text v-if="files.length > 0" class="">
       <div class="d-flex pb-2" v-for="(file, index) in files" :key="index">
-<!--        <v-icon x-large left>mdi-file-outline</v-icon>-->
-        <img :src="getImgSrc(file)" style="width:10vw">
+        <!--        <v-icon x-large left>mdi-file-outline</v-icon>-->
+        <img :src="getImgSrc(file)" style="width:10vw" v-if="disablePreview">
         <span class="ml-3">
                     <div>
                         Имя файла: {{ truncate(file.name, 10, '...') }}
@@ -46,6 +46,10 @@ import truncate from "./helpers/truncate";
 export default {
   name: "DropZone",
   props: {
+    disablePreview: {
+      type: Boolean,
+      default: false,
+    },
     size: {
       type: Number,
       default: 5,

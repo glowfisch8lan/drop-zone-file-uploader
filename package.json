@@ -1,6 +1,6 @@
 {
   "name": "drop-zone-file-uploader",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A simple Vue drop uploader plugin",
   "repository": {
     "type": "git",
@@ -20,8 +20,7 @@
   },
   "files": [
     "dist/*",
-    "src/components/*",
-    "src/build-entry.js"
+    "src/*"
   ],
   "homepage": "https://github.com/glowfisch8lan/drop-zone-file-uploader",
   "bugs": {
